@@ -34,7 +34,6 @@ class SetEncoder(JSONEncoder):
         Returns:
         - JSON-encoded object.
     """
-
     def default(self, obj):
         """
         Custom JSON encoder for handling sets.
