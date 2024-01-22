@@ -3,7 +3,6 @@ Main script for Trello Python application without a graphical user interface.
 
 This script imports functions from 'extras_sem_gui' and 'def_sem_gui' modules,
 loads data, clears the terminal, and enters a loop to make choices.
-
 """
 from extras_sem_gui import carregar_cartoes
 from extras_sem_gui import carregar_ids
