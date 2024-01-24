@@ -1,4 +1,6 @@
-from tkinter import *  # ANCHOR - Lista de modulos
+# SECTION - Lista de Modulos
+from tkinter import *  # ANCHOR - Modulo para criar a app
+# !SECTION
 
 
 # SECTION - Aolicação
@@ -8,14 +10,14 @@ class App:
         self.titulo()
         self.subtitulo()
 
-    #ANCHOR -  Definição do titulo
+    # ANCHOR -  Definição do titulo
     def titulo(self):
         title = Label(
             self.master, text="TO-DO Python", font=("Helvetica", 14, "bold")
         )  # TODO Trocar letra
         title.pack()
 
-    #ANCHOR - Definição do subtitulo
+    # ANCHOR - Definição do subtitulo
     def subtitulo(self):
         subtitulo = Label(
             self.master,
@@ -28,6 +30,12 @@ class App:
 
 # SECTION - Rodar a app
 root = Tk()
+
+root.title("TO-DO Python")
+photo_1 = PhotoImage(file="assets/pixlr-logo-sem-fundo.png")
+root.iconphoto(False, photo_1)
+root.geometry("1280x800")
+
 app = App(root)
 root.mainloop()
 # !SECTION
