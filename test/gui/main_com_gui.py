@@ -8,14 +8,12 @@ class App:
         self.subtitulo()
         self.botao_trocar_tela()
 
-    # ANCHOR -  Definição do titulo
-    def titulo(self): 
+    def titulo(self):
         title = Label(
             self.master, text="TO-DO Python", font=("Helvetica", 14, "bold")
         )
         title.pack()
 
-    # ANCHOR - Definição do subtitulo
     def subtitulo(self):
         subtitulo = Label(
             self.master,
@@ -68,12 +66,5 @@ class SegundaTela:
 
 
 root = Tk()
-
-root.title("TO-DO Python")
-photo_1 = PhotoImage(file="assets/pixlr-logo-sem-fundo.png")
-root.iconphoto(False, photo_1)
-root.geometry("640x400")
-root.maxsize(1280, 800)
-
 app = App(root)
 root.mainloop()
