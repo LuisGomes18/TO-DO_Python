@@ -14,7 +14,6 @@ Functions:
 - criar_cartao: Function to create a new card.
 - modificar_cartao: Function to modify an existing card.
 - apagar_cartao: Function to delete an existing card.
-
 """
 import datetime
 from json import JSONEncoder
@@ -141,12 +140,10 @@ def modificar_cartao(IDs, Cartoes):
         print('\nID inválido. Coloque um ID válido.')
         pedir_id = int(input('Qual ID do cartão que quer modificar: '))
 
-    elemento = str(
-        input('Qual elemento quer modificar: (titulo, descricao, tag)\n-> '))
+    elemento = str(input('Qual elemento quer modificar: (titulo, descricao, tag)\n-> '))
     elemento.lower()
     while elemento not in elemento_permitido:
-        elemento = str(
-            input('Qual elemento quer modificar: (titulo, descricao, tag)\n-> '))
+        elemento = str(input('Qual elemento quer modificar: (titulo, descricao, tag)\n-> '))
         elemento.lower()
 
     if elemento == "titulo":

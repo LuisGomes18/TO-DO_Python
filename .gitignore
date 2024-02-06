@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 .$trello.drawio.bkp
 0
+/.pylintrc
