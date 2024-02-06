@@ -1,0 +1,11 @@
+tasks:
+  - name: Projeto TO-DO Python
+    init: |
+      pip install --upgrade pip
+
+    command: |
+      python3 main_sem_gui.py
+
+vscode:
+  extensions:
+    - ms-python.python
