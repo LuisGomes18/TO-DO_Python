@@ -33,6 +33,7 @@ class SetEncoder(JSONEncoder):
         Returns:
         - JSON-encoded object.
     """
+
     def default(self, obj):
         """
         Custom JSON encoder for handling sets.
@@ -168,9 +169,20 @@ def modificar_cartao(IDs, Cartoes):
         data_atual = datetime.date.today().strftime("%d-%m-%Y")
         hora_atual = datetime.datetime.now().strftime("%H:%M")
         numero_tag = int(input('Quantas tags quer adicionar ao cartão: '))
+        tags = []
+
         for i in range(numero_tag):
-            nova_tag = str(input('Qual é a nova tag do cartão: '))
-            nova_tag_mod = "@" + nova_tag
+            nova_tag = input('Qual é a nova tag do cartão: ')
+            nova_tag_mod = nova_tag.replace(" ", "_").replace("@", "")
+            nova_tag_mod = "@" + nova_tag_mod
+            verificacao = int(input(f'Sua tag {nova_tag_mod} está correta? (1- Sim e 2- Não)\n-> '))
+            if verificacao == 1:
+                tags.append(nova_tag_mod)
+            elif verificacao == 2:
+                pass
+            else:
+                print('Valor Inválido')
+                exit(1)
 
         Cartoes[f"{pedir_id}"]['Tag'].append(nova_tag_mod)
         Cartoes[f"{pedir_id}"]['Data_ultima_modificacao'] = data_atual

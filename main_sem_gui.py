@@ -17,8 +17,8 @@ dados_IDs = carregar_ids()
 IDs = dados_IDs["IDs"]
 
 Cartoes = carregar_cartoes()
-mostrar_cartoes(Cartoes)
 print('\n')
 
 while True:
+    mostrar_cartoes(Cartoes)
     escolha(IDs, Cartoes, dados_IDs)

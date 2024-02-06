@@ -97,18 +97,17 @@ def apagar_terminal():
     """
     Limpa o terminal com base no sistema operacional.
     """
+    os_name = platform.system()
     try:
-        os_name = platform.system()
-    except Exception as e:
-        print(f'Erro ao tentar limpar o terminal: {e}')
-        exit(1)
-    else:
         if os_name == "Linux" or os_name == "Darwin":
             system("clear")
         elif os_name == "Windows":
             system("cls")
         else:
             print("Sistema não reconhecido")
+    except Exception as e:
+        print(f'Erro ao tentar limpar o terminal: {e}')
+        exit(1)
 
 
 def mostrar_cartoes(Cartoes):
