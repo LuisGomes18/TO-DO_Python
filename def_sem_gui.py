@@ -1,4 +1,3 @@
-# pylint: disable=invalid-name
 """
 Trello Python Module
 
@@ -74,7 +73,7 @@ def escolha(IDs, Cartoes, dados_IDs):
         exit(0)
     else:
         print('\nValor Invalido\n')
-        exit(1)
+        pass
 
 
 def criar_cartao(Cartoes, IDs, dados_IDs):
@@ -137,6 +136,8 @@ def modificar_cartao(IDs, Cartoes):
     mostrar_cartoes(Cartoes)
 
     pedir_id = int(input('Qual ID do cartão que quer modificar: '))
+    if pedir_id == -1:
+        exit(0)
     while pedir_id not in IDs or len(str(pedir_id)) > 5 or len(str(pedir_id)) < 5:
         print('\nID inválido. Coloque um ID válido.')
         pedir_id = int(input('Qual ID do cartão que quer modificar: '))
