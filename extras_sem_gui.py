@@ -99,7 +99,6 @@ def apagar_terminal():
     """
     try:
         os_name = str(platform.system())
-        print(os_name)
         try:
             if os_name == "Linux" or os_name == "Darwin":
                 system("clear")
