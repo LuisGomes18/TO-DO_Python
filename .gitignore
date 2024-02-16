@@ -347,3 +347,8 @@ $RECYCLE.BIN/
 .$trello.drawio.bkp
 0
 /.pylintrc
+.idea/misc.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/trello-python-main.iml
+.idea/vcs.xml
