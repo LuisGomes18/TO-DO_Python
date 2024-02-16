@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Main script for Trello Python application without a graphical user interface.
 

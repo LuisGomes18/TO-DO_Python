@@ -1,5 +1,4 @@
-# pylint: disable=invalid-name
-# pylint: disable=W0718
+# -*- coding: utf-8 -*-
 """
 Script to handle loading, saving, and managing card data.
 
