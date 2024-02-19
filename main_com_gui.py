@@ -37,17 +37,18 @@ def salvar(id, titulo, descricao):
 
 def apagar_todo(self):
     id_ticket = int(self.id_apagar.get())
+
     if id_ticket not in self.IDs:
         messagebox.showerror("Erro", "ID do Ticket não encontrado.")
         return
 
     apagar_mesmo = messagebox.askquestion("Apagar Ticket", "Tem certeza que deseja apagar esse Ticket?")
     if apagar_mesmo == "yes":
-        Cartoes.pop(id_ticket, None)
-        self.IDs.remove(id_ticket)
+        Cartoes.pop(str(id_ticket), " ")
+        guardar_cartoes(Cartoes)
+        self.IDs.remove(str(id_ticket))
         self.dados_IDs['IDs'] = self.IDs
         guardar_ids(self.dados_IDs)
-        guardar_cartoes(Cartoes)
         self.id_apagar.delete(0, 'end')
         messagebox.showinfo("Sucesso", "Ticket apagado com sucesso.")
     else:
@@ -86,7 +87,7 @@ class Application:
         tela_3.pack()
 
         tela_4 = Frame(self.master)
-        tela_4["pady"] = 40
+        tela_4["pady"] = 100
         tela_4.pack()
 
         titulo = Label(tela_1, text='TODO Python')
