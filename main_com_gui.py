@@ -12,7 +12,8 @@ IDs = dados_IDs['IDs']
 Cartoes = carregar_cartoes()
 
 
-def salvar(id, titulo, descricao):
+def salvar(self, id, titulo, descricao):
+    self.IDs.append(id)
     data_hoje = datetime.date.today()
 
     cartao = {
@@ -46,7 +47,7 @@ def apagar_todo(self):
     if apagar_mesmo == "yes":
         Cartoes.pop(str(id_ticket), " ")
         guardar_cartoes(Cartoes)
-        self.IDs.remove(str(id_ticket))
+        self.IDs.remove(id_ticket)
         self.dados_IDs['IDs'] = self.IDs
         guardar_ids(self.dados_IDs)
         self.id_apagar.delete(0, 'end')
@@ -200,7 +201,8 @@ class Application:
             messagebox.showerror("Erro", "Por favor, preencha todos os campos.")
             return
         id = self.gerar_novo_id()
-        salvar(id, titulo, descricao)
+
+        salvar(self, id, titulo, descricao)
         self.titulo_ticket.delete(0, 'end')
         self.descricao_ticket.delete("1.0", "end")
         self.tela()
