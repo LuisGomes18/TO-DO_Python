@@ -45,7 +45,7 @@ def apagar_todo(self):
         messagebox.showerror("Erro", "ID do Ticket não encontrado.")
         return
 
-    apagar_mesmo = messagebox.askquestion("Apagar Ticket", "Tem certeza que deseja apagar esse Ticket?")
+    apagar_mesmo = messagebox.askquestion("Apagar Ticket", "Tem certeza que deseja apagar esse Ticket? ")
     if apagar_mesmo == "yes":
         Cartoes.pop(str(id_ticket), " ")
         guardar_cartoes(Cartoes)
