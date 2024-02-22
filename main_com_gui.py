@@ -30,6 +30,8 @@ def salvar(self, id, titulo, descricao):
     }
 
     dados_IDs['IDs'].append(id)
+    print(self.IDs)
+    print(dados_IDs)
     guardar_ids(dados_IDs)
 
     Cartoes.update(cartao)
@@ -52,6 +54,7 @@ def apagar_todo(self):
         guardar_ids(self.dados_IDs)
         self.id_apagar.delete(0, 'end')
         messagebox.showinfo("Sucesso", "Ticket apagado com sucesso.")
+        self.tela()
     else:
         self.id_apagar.delete(0, 'end')
         messagebox.showinfo("Sucesso", "Ticket não apagado.")
