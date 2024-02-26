@@ -17,6 +17,20 @@ def carregar_dados_database():
         return informacoes_database
 
 
+def criar_database(mydb, mycursor):
+    mycursor.execute("DROP TABLE IF EXISTS conteudo")
+    mycursor.execute(
+        "CREATE TABLE conteudo (id INT NOT NULL, titulo TINYTEXT NOT NULL, descricao TEXT NOT NULL, tags VARCHAR(255) "
+        "NOT NULL, data_criacao DATE NOT NULL, hora_criacao TIME NOT NULL, data_modificacao DATE NOT NULL, "
+        "hora_modificacao TIME NOT NULL)")
+    mycursor.execute(
+        "INSERT INTO conteudo VALUES ('1', 'Teste', 'Teste do TODO', ' ', '2024-02-26', '09:30', '2024-02-26', '09:30')")
+
+    mydb.commit()
+
+    print(mycursor.rowcount, "record inserted.")
+
+
 def carregar_conteudo(mycursor):
     try:
         mostrar_conteudo_todo = "SELECT * FROM conteudo"

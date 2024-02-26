@@ -6,9 +6,6 @@ import platform
 
 
 def apagar_terminal():
-    """
-    Limpa o terminal com base no sistema operacional.
-    """
     try:
         os_name = str(platform.system())
         try:
