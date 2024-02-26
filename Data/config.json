@@ -1,7 +1,7 @@
 {
-      "database_criada": false,
-      "host": "localhost",
-      "nome_database": "to-do_python",
-      "nome_utilizador": "root",
-      "password": " "
+    "database_criada": true,
+    "host": "localhost",
+    "nome_database": "to-do_python",
+    "nome_utilizador": "root",
+    "password": "Luisg@mes19!"
 }

@@ -28,8 +28,6 @@ def criar_database(mydb, mycursor):
 
     mydb.commit()
 
-    print(mycursor.rowcount, "record inserted.")
-
 
 def carregar_conteudo(mycursor):
     try:

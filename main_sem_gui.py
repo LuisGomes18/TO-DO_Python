@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import mysql.connector
+from json import load
 from json import dump
 from extras import carregar_dados_database
 from extras import listar_ids
@@ -25,15 +26,20 @@ except mysql.connector.Error as err:
     print(f"Something went wrong: {err}")
     exit(1)
 
-database_criada = info_database["database_criada"]
-if not database_criada:
+try:
+    with open('Data/config.json', 'r', encoding='utf-8') as dados:
+        config = load(dados)
+except FileNotFoundError:
+    print('Ficheiro não encontrado')
+    config = {}
+
+if 'database_criada' not in config or not config['database_criada']:
     criar_database(mydb, mycursor)
-    database_criada = True
+    config['database_criada'] = True
     try:
         with open('Data/config.json', 'w', encoding='utf-8') as dados:
-            dump({"database_criada": database_criada}, dados)
-    except FileNotFoundError:
-        print('Ficheiro não encontrado')
+            dump(config, dados, indent=4, ensure_ascii=False)
+            dados.flush()
     except Exception as erro:
         print(f'ERRO: {erro}')
 
