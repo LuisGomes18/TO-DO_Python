@@ -16,6 +16,8 @@ while True:
 1) Ver conteudo (id)
 2) Mostrar tabela inteira
 3) Mudar valor
+4) Criar valor
+5) Apagar valor
 0) Sair
 -> """))
     match escolha:
@@ -25,7 +27,11 @@ while True:
         case 2:
             mostrar_tudo(mycursor)
         case 3:
-            update_item(mycursor)
+            update_item(mydb, mycursor)
+        case 4:
+            criar(mydb, mycursor)
+        case 5:
+            deletar(mydb, mycursor)
         case 0:
             break
         case _:
