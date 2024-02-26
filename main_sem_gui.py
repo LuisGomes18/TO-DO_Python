@@ -1,25 +1,36 @@
 # -*- coding: utf-8 -*-
-"""
-Main script for Trello Python application without a graphical user interface.
+import mysql.connector
+from extras import carregar_dados_database
+from extras import listar_ids
+from extras import carregar_conteudo
+from extras import mostrar_cartoes
+from definicoes import escolha
+from definicoes import apagar_terminal
 
-This script imports functions from 'extras_sem_gui' and 'def_sem_gui' modules,
-loads data, clears the terminal, and enters a loop to make choices.
-"""
-from extras_sem_gui import carregar_cartoes
-from extras_sem_gui import carregar_ids
-from extras_sem_gui import apagar_terminal
-from extras_sem_gui import mostrar_cartoes
-from def_sem_gui import escolha
+
+info_database = carregar_dados_database()
+
+try:
+    mydb = mysql.connector.connect(
+        host=info_database["host"],
+        user=info_database["nome_utilizador"],
+        password=info_database["password"],
+        database=info_database["nome_database"]
+    )
+
+    mycursor = mydb.cursor()
+except mysql.connector.Error as err:
+    print(f"Something went wrong: {err}")
+    exit(1)
 
 
 apagar_terminal()
 
-dados_IDs = carregar_ids()
-IDs = dados_IDs["IDs"]
+IDs = listar_ids(mycursor)
+cartoes = carregar_conteudo(mycursor)
 
-Cartoes = carregar_cartoes()
 print('\n')
 
+mostrar_cartoes(mycursor)
 while True:
-    mostrar_cartoes(Cartoes)
-    escolha(IDs, Cartoes, dados_IDs)
+    escolha(mydb, mycursor)
