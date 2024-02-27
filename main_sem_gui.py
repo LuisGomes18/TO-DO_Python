@@ -46,8 +46,9 @@ if 'database_criada' not in config or not config['database_criada']:
 apagar_terminal()
 
 IDs = listar_ids(mycursor)
+print('\n')
 cartoes = carregar_conteudo(mycursor)
-
+print(cartoes)
 print('\n')
 
 mostrar_cartoes(mycursor)
