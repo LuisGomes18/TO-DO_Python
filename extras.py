@@ -27,6 +27,7 @@ def criar_database(mydb, mycursor):
         "INSERT INTO conteudo VALUES ('1', 'Teste', 'Teste do TODO', ' ', '2024-02-26', '09:30', '2024-02-26', '09:30')")
 
     mydb.commit()
+    print('\n')
 
 
 def carregar_conteudo(mycursor):
@@ -38,6 +39,7 @@ def carregar_conteudo(mycursor):
         return cartoes
     except Exception as erro:
         print(f'Erro ao carregar conteúdo: {erro}')
+    print('\n')
 
 
 def listar_ids(mycursor):
@@ -58,3 +60,4 @@ def mostrar_cartoes(mycursor):
         print(cartoes)
     else:
         print('Nenhum conteúdo encontrado')
+    print('\n')

@@ -42,6 +42,7 @@ def escolha(mydb, mycursor):
         case _:
             print('Valor Invalido')
             pass
+    print('\n')
 
 
 def criar_cartao(mydb, mycursor):
@@ -69,6 +70,7 @@ def criar_cartao(mydb, mycursor):
 
     print(mycursor.rowcount, "record(s) affected")
     print("Conteúdo criado com sucesso!")
+    print('\n')
 
 
 def modificar_cartao(mydb, mycursor):
@@ -105,6 +107,7 @@ def modificar_cartao(mydb, mycursor):
         print("Conteúdo atualizado com sucesso!")
     else:
         print("Opção inválida!")
+    print('\n')
 
 
 def apagar_cartao(mydb, mycursor):
@@ -123,3 +126,4 @@ def apagar_cartao(mydb, mycursor):
             tentativas += 1
             print("ID inválido. Tente novamente.")
     print("Número máximo de tentativas excedido. Operação cancelada.")
+    print('\n')

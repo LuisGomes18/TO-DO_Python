@@ -48,9 +48,8 @@ apagar_terminal()
 IDs = listar_ids(mycursor)
 print('\n')
 cartoes = carregar_conteudo(mycursor)
-print(cartoes)
+mostrar_cartoes(mycursor)
 print('\n')
 
-mostrar_cartoes(mycursor)
 while True:
     escolha(mydb, mycursor)
