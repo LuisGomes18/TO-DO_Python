@@ -49,7 +49,6 @@ IDs = listar_ids(mycursor)
 print('\n')
 cartoes = carregar_conteudo(mycursor)
 mostrar_cartoes(mycursor)
-print('\n')
 
 while True:
     escolha(mydb, mycursor)

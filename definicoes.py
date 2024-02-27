@@ -25,7 +25,7 @@ def apagar_terminal():
 
 def escolha(mydb, mycursor):
     escolha = int(input('''
-1) criar Cartão
+1) Criar Cartão
 2) Modificar cartao existente
 3) Apagar Cartão
 0) Sair 
@@ -42,10 +42,10 @@ def escolha(mydb, mycursor):
         case _:
             print('Valor Invalido')
             pass
-    print('\n')
 
 
 def criar_cartao(mydb, mycursor):
+    print('\n')
     lista_id = listar_ids(mycursor)
 
     data_criacao = strftime("%Y-%m-%d")
@@ -70,10 +70,10 @@ def criar_cartao(mydb, mycursor):
 
     print(mycursor.rowcount, "record(s) affected")
     print("Conteúdo criado com sucesso!")
-    print('\n')
 
 
 def modificar_cartao(mydb, mycursor):
+    print('\n')
     lista_id = listar_ids(mycursor)
 
     id = int(input('Qual o id do conteúdo que quer mudar: '))
@@ -107,10 +107,10 @@ def modificar_cartao(mydb, mycursor):
         print("Conteúdo atualizado com sucesso!")
     else:
         print("Opção inválida!")
-    print('\n')
 
 
 def apagar_cartao(mydb, mycursor):
+    print('\n')
     lista_ids = listar_ids(mycursor)
     tentativas = 0
     while tentativas < 3:
@@ -126,4 +126,3 @@ def apagar_cartao(mydb, mycursor):
             tentativas += 1
             print("ID inválido. Tente novamente.")
     print("Número máximo de tentativas excedido. Operação cancelada.")
-    print('\n')
